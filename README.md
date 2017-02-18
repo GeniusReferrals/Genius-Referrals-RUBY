@@ -142,20 +142,20 @@ The singleton instance of the ``` AuthenticationsController ``` class can be acc
 authentications = client.authentications
 ```
 
-#### <a name="get_authentications"></a>![Method: ](https://apidocs.io/img/method.png ".AuthenticationsController.get_authentications") get_authentications
+#### <a name="get_authentication"></a>![Method: ](https://apidocs.io/img/method.png ".AuthenticationsController.get_authentication") get_authentication
 
 > Allow clients to test authentication on Genius Referrals platform.
 
 
 ```ruby
-def get_authentications; end
+def get_authentication; end
 ```
 
 #### Example Usage
 
 ```ruby
 
-result = authentications.get_authentications()
+result = authentications.get_authentication()
 
 ```
 
@@ -387,6 +387,263 @@ result = advocates.patch_advocate(account_slug, advocate_token, advocate_patch_f
 ```
 
 
+#### <a name="get_share_links"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.get_share_links") get_share_links
+
+> Get the advocates share links. These are the links that advocates use to share your services online.  Share links are wrapped per campaign and widget package.
+
+
+```ruby
+def get_share_links(account_slug, 
+                        advocate_token); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| account_slug |  ``` Required ```  | The account identifier |
+| advocate_token |  ``` Required ```  | The advocate's token |
+
+
+#### Example Usage
+
+```ruby
+account_slug = 'account_slug'
+advocate_token = 'advocate_token'
+
+result = advocates.get_share_links(account_slug, advocate_token)
+
+```
+
+
+#### <a name="put_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.put_payment_method") put_payment_method
+
+> Update a payment method.
+
+
+```ruby
+def put_payment_method(account_slug, 
+                           advocate_token, 
+                           advocate_payment_method_id, 
+                           advocate_payment_method_form); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| account_slug |  ``` Required ```  | The advocate's token |
+| advocate_token |  ``` Required ```  | The advocate's token |
+| advocate_payment_method_id |  ``` Required ```  | The payment method's identifier |
+| advocate_payment_method_form |  ``` Required ```  | The body of the request |
+
+
+#### Example Usage
+
+```ruby
+account_slug = 'account_slug'
+advocate_token = 'advocate_token'
+advocate_payment_method_id = 186
+advocate_payment_method_form = PaymentMethodForm.new
+
+advocates.put_payment_method(account_slug, advocate_token, advocate_payment_method_id, advocate_payment_method_form)
+
+```
+
+
+#### <a name="get_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.get_payment_method") get_payment_method
+
+> Get an advocate's payment method
+
+
+```ruby
+def get_payment_method(account_slug, 
+                           advocate_token, 
+                           advocate_payment_method_id); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| account_slug |  ``` Required ```  | The account identifier |
+| advocate_token |  ``` Required ```  | The advocate's token |
+| advocate_payment_method_id |  ``` Required ```  | The payment method's identifier |
+
+
+#### Example Usage
+
+```ruby
+account_slug = 'account_slug'
+advocate_token = 'advocate_token'
+advocate_payment_method_id = 186
+
+result = advocates.get_payment_method(account_slug, advocate_token, advocate_payment_method_id)
+
+```
+
+
+#### <a name="post_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.post_payment_method") post_payment_method
+
+> Create a new payment method.
+
+
+```ruby
+def post_payment_method(account_slug, 
+                            advocate_token, 
+                            advocate_payment_method_form); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| account_slug |  ``` Required ```  | The account identifier |
+| advocate_token |  ``` Required ```  | The advocate's token |
+| advocate_payment_method_form |  ``` Required ```  | The body of the request |
+
+
+#### Example Usage
+
+```ruby
+account_slug = 'account_slug'
+advocate_token = 'advocate_token'
+advocate_payment_method_form = PaymentMethodForm.new
+
+result = advocates.post_payment_method(account_slug, advocate_token, advocate_payment_method_form)
+
+```
+
+
+#### <a name="get_bonus_redemption_method"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.get_bonus_redemption_method") get_bonus_redemption_method
+
+> Get bonuses redemption method.
+
+
+```ruby
+def get_bonus_redemption_method(bonuses_redemption_method_slug); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| bonuses_redemption_method_slug |  ``` Required ```  | The bonus redemption method's identifier |
+
+
+#### Example Usage
+
+```ruby
+bonuses_redemption_method_slug = 'bonuses_redemption_method_slug'
+
+result = advocates.get_bonus_redemption_method(bonuses_redemption_method_slug)
+
+```
+
+
+#### <a name="get_bonus_redemption_methods"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.get_bonus_redemption_methods") get_bonus_redemption_methods
+
+> Get bonuses redemption methods.
+
+
+```ruby
+def get_bonus_redemption_methods; end
+```
+
+#### Example Usage
+
+```ruby
+
+result = advocates.get_bonus_redemption_methods()
+
+```
+
+
+#### <a name="get_currencies"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.get_currencies") get_currencies
+
+> Get currencies.
+
+
+```ruby
+def get_currencies; end
+```
+
+#### Example Usage
+
+```ruby
+
+result = advocates.get_currencies()
+
+```
+
+
+#### <a name="get_currency"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.get_currency") get_currency
+
+> Get a currency.
+
+
+```ruby
+def get_currency(code); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| code |  ``` Required ```  | The currency's code |
+
+
+#### Example Usage
+
+```ruby
+code = 'code'
+
+result = advocates.get_currency(code)
+
+```
+
+
+#### <a name="get_payment_methods"></a>![Method: ](https://apidocs.io/img/method.png ".AdvocatesController.get_payment_methods") get_payment_methods
+
+> Get the advocate's payment methods.
+
+
+```ruby
+def get_payment_methods(account_slug, 
+                            advocate_token, 
+                            page = 1, 
+                            limit = 10, 
+                            filter = nil, 
+                            sort = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| account_slug |  ``` Required ```  | The account identifier |
+| advocate_token |  ``` Required ```  | The advocate's token |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| filter |  ``` Optional ```  | Allowed fields: username, is_active. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
+| sort |  ``` Optional ```  | Allowed fields: username, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort=last_name\|first_name\|-hire_date |
+
+
+#### Example Usage
+
+```ruby
+account_slug = 'account_slug'
+advocate_token = 'advocate_token'
+page = 1
+limit = 10
+filter = 'filter'
+sort = 'sort'
+
+result = advocates.get_payment_methods(account_slug, advocate_token, page, limit, filter, sort)
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ### <a name="accounts_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AccountsController") AccountsController
@@ -431,8 +688,8 @@ result = accounts.get_account(account_slug)
 
 
 ```ruby
-def get_accounts(page = nil, 
-                     limit = nil, 
+def get_accounts(page = 1, 
+                     limit = 10, 
                      filter = nil, 
                      sort = nil); end
 ```
@@ -441,8 +698,8 @@ def get_accounts(page = nil,
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: name. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: name, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort=last_name\|first_name\|-hire_date |
 
@@ -450,8 +707,8 @@ def get_accounts(page = nil,
 #### Example Usage
 
 ```ruby
-page = 242
-limit = 242
+page = 1
+limit = 10
 filter = 'filter'
 sort = 'sort'
 
@@ -532,7 +789,7 @@ result = reports.get_bonuses_summary_per_origin(advocate_token)
 ```ruby
 def get_top_advocates(account_slug = nil, 
                           campaign_slug = nil, 
-                          limit = nil, 
+                          limit = 10, 
                           from = nil, 
                           to = nil); end
 ```
@@ -543,7 +800,7 @@ def get_top_advocates(account_slug = nil,
 |-----------|------|-------------|
 | account_slug |  ``` Optional ```  | The account identifier |
 | campaign_slug |  ``` Optional ```  | The campaign identifier |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10) |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10) |
 | from |  ``` Optional ```  | The datetime were the range of the search starts |
 | to |  ``` Optional ```  | The datetime were the range of the search stops |
 
@@ -553,7 +810,7 @@ def get_top_advocates(account_slug = nil,
 ```ruby
 account_slug = 'account_slug'
 campaign_slug = 'campaign_slug'
-limit = 242
+limit = 10
 from = DateTime.now
 to = DateTime.now
 
@@ -834,15 +1091,15 @@ referrals.delete_referral(account_slug, advocate_token, referral_id)
 ```
 
 
-#### <a name="post_referrals"></a>![Method: ](https://apidocs.io/img/method.png ".ReferralsController.post_referrals") post_referrals
+#### <a name="post_referral"></a>![Method: ](https://apidocs.io/img/method.png ".ReferralsController.post_referral") post_referral
 
 > Create a new referral.
 
 
 ```ruby
-def post_referrals(account_slug, 
-                       advocate_token, 
-                       referral_form); end
+def post_referral(account_slug, 
+                      advocate_token, 
+                      referral_form); end
 ```
 
 #### Parameters
@@ -861,7 +1118,7 @@ account_slug = 'account_slug'
 advocate_token = 'advocate_token'
 referral_form = ReferralForm.new
 
-result = referrals.post_referrals(account_slug, advocate_token, referral_form)
+result = referrals.post_referral(account_slug, advocate_token, referral_form)
 
 ```
 
@@ -909,8 +1166,8 @@ referrals.put_referral(account_slug, advocate_token, referral_id, referral_form)
 ```ruby
 def get_referrals(account_slug, 
                       advocate_token, 
-                      page = nil, 
-                      limit = nil, 
+                      page = 1, 
+                      limit = 10, 
                       filter = nil, 
                       sort = nil); end
 ```
@@ -921,8 +1178,8 @@ def get_referrals(account_slug,
 |-----------|------|-------------|
 | account_slug |  ``` Required ```  | The account identifier |
 | advocate_token |  ``` Required ```  | The advocate's token |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: url, referral_origin_slug, created. Use the following delimiters to build your filters params. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -932,8 +1189,8 @@ def get_referrals(account_slug,
 ```ruby
 account_slug = 'account_slug'
 advocate_token = 'advocate_token'
-page = 201
-limit = 201
+page = 1
+limit = 10
 filter = 'filter'
 sort = 'sort'
 
@@ -1064,7 +1321,7 @@ def patch_redemption_request(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-redemption_request_id = 201
+redemption_request_id = 144
 
 redemptionRequests.patch_redemption_request(account_slug, redemption_request_id)
 
@@ -1136,8 +1393,8 @@ result = redemptionRequests.get_redemption_request(account_slug, redemption_requ
 
 ```ruby
 def get_redemption_requests(account_slug, 
-                                page = nil, 
-                                limit = nil, 
+                                page = 1, 
+                                limit = 10, 
                                 filter = nil, 
                                 sort = nil); end
 ```
@@ -1147,8 +1404,8 @@ def get_redemption_requests(account_slug,
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | account_slug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: redemption_request_id, name, lastname, email, request_status_slug, request_action_slug, from, to, created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: name, lastname, email, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1157,8 +1414,8 @@ def get_redemption_requests(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-page = 'page'
-limit = 'limit'
+page = 1
+limit = 10
 filter = 'filter'
 sort = 'sort'
 
@@ -1186,8 +1443,8 @@ bonuses = client.bonuses
 
 ```ruby
 def get_bonuses(account_slug, 
-                    page = nil, 
-                    limit = nil, 
+                    page = 1, 
+                    limit = 10, 
                     filter = nil, 
                     sort = nil); end
 ```
@@ -1197,8 +1454,8 @@ def get_bonuses(account_slug,
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | account_slug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: name, lastname, email, campaign_slug, from, to, created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: name, lastname, email, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1207,8 +1464,8 @@ def get_bonuses(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-page = 201
-limit = 201
+page = 1
+limit = 10
 filter = 'filter'
 sort = 'sort'
 
@@ -1217,14 +1474,14 @@ result = bonuses.get_bonuses(account_slug, page, limit, filter, sort)
 ```
 
 
-#### <a name="post_bonuses"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.post_bonuses") post_bonuses
+#### <a name="post_bonus"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.post_bonus") post_bonus
 
 > Make an attempt to give a bonus for to the advocate's referrer. The system processes the given advocate (referral) and creates a bonus for the advocate's referrer if is needed. All restrictions set on the campaigns for this account will be check out before giving the bonus to the advocate's referrer.
 
 
 ```ruby
-def post_bonuses(account_slug, 
-                     bonuses_form); end
+def post_bonus(account_slug, 
+                   bonuses_form); end
 ```
 
 #### Parameters
@@ -1241,21 +1498,21 @@ def post_bonuses(account_slug,
 account_slug = 'account_slug'
 bonuses_form = BonusesForm.new
 
-result = bonuses.post_bonuses(account_slug, bonuses_form)
+result = bonuses.post_bonus(account_slug, bonuses_form)
 
 ```
 
 
-#### <a name="get_bonuses_checkup"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.get_bonuses_checkup") get_bonuses_checkup
+#### <a name="get_bonus_checkup"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.get_bonus_checkup") get_bonus_checkup
 
 > Check if there is a bonus to be given to the advocate. Allows the clients to check if there is a bonus to be given, it simulates the behaivor of a POST request to /accounts/{account_slug}/bonuses resource. This resource is idempotent.
 
 
 ```ruby
-def get_bonuses_checkup(account_slug, 
-                            advocate_token, 
-                            reference, 
-                            payment_amount); end
+def get_bonus_checkup(account_slug, 
+                          advocate_token, 
+                          reference, 
+                          payment_amount); end
 ```
 
 #### Parameters
@@ -1274,21 +1531,21 @@ def get_bonuses_checkup(account_slug,
 account_slug = 'account_slug'
 advocate_token = 'advocate_token'
 reference = 'reference'
-payment_amount = 201.244745685833
+payment_amount = 144.995032215954
 
-result = bonuses.get_bonuses_checkup(account_slug, advocate_token, reference, payment_amount)
+result = bonuses.get_bonus_checkup(account_slug, advocate_token, reference, payment_amount)
 
 ```
 
 
-#### <a name="post_bonuses_force"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.post_bonuses_force") post_bonuses_force
+#### <a name="post_force_bonus"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.post_force_bonus") post_force_bonus
 
 > Force the system to give a bonus to an advocate. The system will not take into account the restriccions specified on the campaigns.
 
 
 ```ruby
-def post_bonuses_force(account_slug, 
-                           bonus_form); end
+def post_force_bonus(account_slug, 
+                         bonus_form); end
 ```
 
 #### Parameters
@@ -1303,21 +1560,21 @@ def post_bonuses_force(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-bonus_form = BonusesForm1.new
+bonus_form = ForceBonusesForm.new
 
-result = bonuses.post_bonuses_force(account_slug, bonus_form)
+result = bonuses.post_force_bonus(account_slug, bonus_form)
 
 ```
 
 
-#### <a name="get_bonuses_trace"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.get_bonuses_trace") get_bonuses_trace
+#### <a name="get_bonus_trace"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.get_bonus_trace") get_bonus_trace
 
 > Get a bonus request trace.
 
 
 ```ruby
-def get_bonuses_trace(account_slug, 
-                          trace_id); end
+def get_bonus_trace(account_slug, 
+                        trace_id); end
 ```
 
 #### Parameters
@@ -1332,9 +1589,9 @@ def get_bonuses_trace(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-trace_id = 201
+trace_id = 144
 
-result = bonuses.get_bonuses_trace(account_slug, trace_id)
+result = bonuses.get_bonus_trace(account_slug, trace_id)
 
 ```
 
@@ -1361,7 +1618,7 @@ def delete_bonus(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-bonus_id = 201
+bonus_id = 144
 
 bonuses.delete_bonus(account_slug, bonus_id)
 
@@ -1390,24 +1647,24 @@ def get_bonus(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-bonus_id = 201
+bonus_id = 144
 
 result = bonuses.get_bonus(account_slug, bonus_id)
 
 ```
 
 
-#### <a name="get_bonuses_traces"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.get_bonuses_traces") get_bonuses_traces
+#### <a name="get_bonus_traces"></a>![Method: ](https://apidocs.io/img/method.png ".BonusesController.get_bonus_traces") get_bonus_traces
 
 > Get the list of bonuses traces (audit trail). Every time the system tries to give a bonus the an advocate a new trace is created.
 
 
 ```ruby
-def get_bonuses_traces(account_slug, 
-                           page = nil, 
-                           limit = nil, 
-                           filter = nil, 
-                           sort = nil); end
+def get_bonus_traces(account_slug, 
+                         page = 1, 
+                         limit = 10, 
+                         filter = nil, 
+                         sort = nil); end
 ```
 
 #### Parameters
@@ -1415,8 +1672,8 @@ def get_bonuses_traces(account_slug,
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | account_slug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: reference, result, bonus_amount, advocate_token, advocate_referrer_token, campaign_slug, from, to, created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1425,12 +1682,12 @@ def get_bonuses_traces(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-page = 201
-limit = 201
+page = 1
+limit = 10
 filter = 'filter'
 sort = 'sort'
 
-result = bonuses.get_bonuses_traces(account_slug, page, limit, filter, sort)
+result = bonuses.get_bonus_traces(account_slug, page, limit, filter, sort)
 
 ```
 
@@ -1483,8 +1740,8 @@ result = campaigns.get_campaign(account_slug, campaign_slug)
 
 ```ruby
 def get_campaigns(account_slug, 
-                      page = nil, 
-                      limit = nil, 
+                      page = 1, 
+                      limit = 10, 
                       filter = nil, 
                       sort = nil); end
 ```
@@ -1494,8 +1751,8 @@ def get_campaigns(account_slug,
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | account_slug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: name, description, start_date, end_date, is_active (true\|false), created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: campaign_slug, created, start_date, end_date, is_active. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1504,8 +1761,8 @@ def get_campaigns(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-page = 37
-limit = 37
+page = 1
+limit = 10
 filter = 'filter'
 sort = 'sort'
 

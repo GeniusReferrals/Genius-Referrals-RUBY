@@ -49,8 +49,8 @@ module GeniusReferrals
     # @param [String] sort Optional parameter: Allowed fields: campaign_slug, created, start_date, end_date, is_active. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date'
     # @return Mixed response from the API call
     def get_campaigns(account_slug, 
-                      page = nil, 
-                      limit = nil, 
+                      page = 1, 
+                      limit = 10, 
                       filter = nil, 
                       sort = nil)
 

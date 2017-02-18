@@ -16,8 +16,8 @@ module GeniusReferrals
     # @param [String] sort Optional parameter: Allowed fields: name, lastname, email, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date'
     # @return Mixed response from the API call
     def get_bonuses(account_slug, 
-                    page = nil, 
-                    limit = nil, 
+                    page = 1, 
+                    limit = 10, 
                     filter = nil, 
                     sort = nil)
 
@@ -56,8 +56,8 @@ module GeniusReferrals
     # @param [String] account_slug Required parameter: The account identifier
     # @param [BonusesForm] bonuses_form Required parameter: The body of the request
     # @return Mixed response from the API call
-    def post_bonuses(account_slug, 
-                     bonuses_form)
+    def post_bonus(account_slug, 
+                   bonuses_form)
 
       # prepare query url
       _query_builder = Configuration.base_uri.dup
@@ -91,10 +91,10 @@ module GeniusReferrals
     # @param [String] reference Required parameter: The reference number for this request. Usually the order_id, payment_id, or timestamp.
     # @param [Float] payment_amount Required parameter: The payment amount the referrals has made. Required for a percentage based campaign.
     # @return Binary response from the API call
-    def get_bonuses_checkup(account_slug, 
-                            advocate_token, 
-                            reference, 
-                            payment_amount)
+    def get_bonus_checkup(account_slug, 
+                          advocate_token, 
+                          reference, 
+                          payment_amount)
 
       # prepare query url
       _query_builder = Configuration.base_uri.dup
@@ -126,10 +126,10 @@ module GeniusReferrals
 
     # Force the system to give a bonus to an advocate. The system will not take into account the restriccions specified on the campaigns.
     # @param [String] account_slug Required parameter: The account identifier
-    # @param [BonusesForm1] bonus_form Required parameter: The body of the request
+    # @param [ForceBonusesForm] bonus_form Required parameter: The body of the request
     # @return Mixed response from the API call
-    def post_bonuses_force(account_slug, 
-                           bonus_form)
+    def post_force_bonus(account_slug, 
+                         bonus_form)
 
       # prepare query url
       _query_builder = Configuration.base_uri.dup
@@ -161,8 +161,8 @@ module GeniusReferrals
     # @param [String] account_slug Required parameter: The account identifier
     # @param [Integer] trace_id Required parameter: The trace id
     # @return Mixed response from the API call
-    def get_bonuses_trace(account_slug, 
-                          trace_id)
+    def get_bonus_trace(account_slug, 
+                        trace_id)
 
       # prepare query url
       _query_builder = Configuration.base_uri.dup
@@ -258,11 +258,11 @@ module GeniusReferrals
     # @param [String] filter Optional parameter: Allowed fields: reference, result, bonus_amount, advocate_token, advocate_referrer_token, campaign_slug, from, to, created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah'
     # @param [String] sort Optional parameter: Allowed fields: created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date'
     # @return Mixed response from the API call
-    def get_bonuses_traces(account_slug, 
-                           page = nil, 
-                           limit = nil, 
-                           filter = nil, 
-                           sort = nil)
+    def get_bonus_traces(account_slug, 
+                         page = 1, 
+                         limit = 10, 
+                         filter = nil, 
+                         sort = nil)
 
       # prepare query url
       _query_builder = Configuration.base_uri.dup

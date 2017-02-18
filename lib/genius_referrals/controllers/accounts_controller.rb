@@ -44,8 +44,8 @@ module GeniusReferrals
     # @param [String] filter Optional parameter: Allowed fields: name. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah'
     # @param [String] sort Optional parameter: Allowed fields: name, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort=last_name\|first_name\|-hire_date
     # @return Mixed response from the API call
-    def get_accounts(page = nil, 
-                     limit = nil, 
+    def get_accounts(page = 1, 
+                     limit = 10, 
                      filter = nil, 
                      sort = nil)
 

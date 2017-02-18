@@ -10,7 +10,7 @@ module GeniusReferrals
 
     # Allow clients to test authentication on Genius Referrals platform.
     # @return Mixed response from the API call
-    def get_authentications
+    def get_authentication
 
       # prepare query url
       _query_builder = Configuration.base_uri.dup

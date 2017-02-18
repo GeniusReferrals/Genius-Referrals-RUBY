@@ -77,7 +77,7 @@ module GeniusReferrals
     # @return Mixed response from the API call
     def get_top_advocates(account_slug = nil, 
                           campaign_slug = nil, 
-                          limit = nil, 
+                          limit = 10, 
                           from = nil, 
                           to = nil)
 

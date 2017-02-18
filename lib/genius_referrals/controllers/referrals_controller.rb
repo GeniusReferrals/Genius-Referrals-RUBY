@@ -136,9 +136,9 @@ module GeniusReferrals
     # @param [String] advocate_token Required parameter: The advocate's token
     # @param [ReferralForm] referral_form Required parameter: The body of the request
     # @return Mixed response from the API call
-    def post_referrals(account_slug, 
-                       advocate_token, 
-                       referral_form)
+    def post_referral(account_slug, 
+                      advocate_token, 
+                      referral_form)
 
       # prepare query url
       _query_builder = Configuration.base_uri.dup
@@ -211,8 +211,8 @@ module GeniusReferrals
     # @return Mixed response from the API call
     def get_referrals(account_slug, 
                       advocate_token, 
-                      page = nil, 
-                      limit = nil, 
+                      page = 1, 
+                      limit = 10, 
                       filter = nil, 
                       sort = nil)
 
