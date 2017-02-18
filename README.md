@@ -443,7 +443,7 @@ def put_payment_method(account_slug,
 ```ruby
 account_slug = 'account_slug'
 advocate_token = 'advocate_token'
-advocate_payment_method_id = 186
+advocate_payment_method_id = 69
 advocate_payment_method_form = PaymentMethodForm.new
 
 advocates.put_payment_method(account_slug, advocate_token, advocate_payment_method_id, advocate_payment_method_form)
@@ -476,7 +476,7 @@ def get_payment_method(account_slug,
 ```ruby
 account_slug = 'account_slug'
 advocate_token = 'advocate_token'
-advocate_payment_method_id = 186
+advocate_payment_method_id = 69
 
 result = advocates.get_payment_method(account_slug, advocate_token, advocate_payment_method_id)
 
@@ -1321,7 +1321,7 @@ def patch_redemption_request(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-redemption_request_id = 144
+redemption_request_id = 27
 
 redemptionRequests.patch_redemption_request(account_slug, redemption_request_id)
 
@@ -1531,7 +1531,7 @@ def get_bonus_checkup(account_slug,
 account_slug = 'account_slug'
 advocate_token = 'advocate_token'
 reference = 'reference'
-payment_amount = 144.995032215954
+payment_amount = 27.579617163902
 
 result = bonuses.get_bonus_checkup(account_slug, advocate_token, reference, payment_amount)
 
@@ -1589,7 +1589,7 @@ def get_bonus_trace(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-trace_id = 144
+trace_id = 27
 
 result = bonuses.get_bonus_trace(account_slug, trace_id)
 
@@ -1618,7 +1618,7 @@ def delete_bonus(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-bonus_id = 144
+bonus_id = 27
 
 bonuses.delete_bonus(account_slug, bonus_id)
 
@@ -1647,7 +1647,7 @@ def get_bonus(account_slug,
 
 ```ruby
 account_slug = 'account_slug'
-bonus_id = 144
+bonus_id = 27
 
 result = bonuses.get_bonus(account_slug, bonus_id)
 
