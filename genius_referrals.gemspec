@@ -1,18 +1,15 @@
 Gem::Specification.new do |s|
   s.name = 'genius_referrals'
-  s.version = '1.0.0'
-  s.summary = 'genius_referrals'
-  s.description = 'The Genius Referrals API'
-  s.authors = ['APIMATIC', 'Zeeshan Ejaz Bhatti']
-  s.email = 'zeeshan@apimatic.io'
-  s.homepage = 'https://apimatic.io'
+  s.version = '0.1.0'
+  s.summary = 'Official Ruby SDK for the Genius Referrals public API'
+  s.description = 'A modern Ruby SDK for the Genius Referrals public API.'
+  s.authors = ['Genius Referrals']
+  s.email = 'support@geniusreferrals.com'
+  s.homepage = 'https://www.geniusreferrals.com'
   s.license = 'MIT'
-  s.add_dependency('logging', '~> 2.0')
-  s.add_dependency('faraday', '~> 0.10.0')
-  s.add_dependency('test-unit', '~> 3.1.5')
-  s.add_dependency('certifi', '~> 2016.9', '>= 2016.09.26')
-  s.add_dependency('faraday-http-cache', '~> 1.2', '>= 1.2.2')
-  s.required_ruby_version = '~> 2.0'
+  s.add_development_dependency('minitest', '~> 5.20')
+  s.add_development_dependency('rake', '~> 13.1')
+  s.required_ruby_version = '>= 3.0'
   s.files = Dir['{bin,lib,man,test,spec}/**/*', 'README*', 'LICENSE*']
   s.require_paths = ['lib']
 end
