@@ -87,7 +87,8 @@ module GeniusReferrals
           status_code: response.status_code,
           response: parsed,
           body: response.body,
-          request: request
+          request: request,
+          secrets: [auth_token]
         )
       end
     end
