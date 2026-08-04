@@ -42,6 +42,14 @@ module GeniusReferrals
       request('DELETE', "/accounts/#{esc(account_slug)}/advocates/#{esc(advocate_token)}")
     end
 
+    # Delete all advocates for an account, or a scoped comma-separated token set.
+    def delete_all(account_slug, advocates: nil)
+      query_value = advocates.is_a?(Array) ? advocates.join(',') : advocates
+      request('DELETE',
+              "/accounts/#{esc(account_slug)}/advocates",
+              params: compact(advocates: query_value))
+    end
+
     # Return share links for one advocate.
     def share_links(account_slug, advocate_token)
       request('GET', "/accounts/#{esc(account_slug)}/advocates/#{esc(advocate_token)}/share-links")

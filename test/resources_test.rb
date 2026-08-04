@@ -17,6 +17,24 @@ class ResourcesTest < Minitest::Test
     assert_equal({ 'advocate' => { 'email' => 'a@example.com' } }, JSON.parse(request[:body]))
   end
 
+  def test_advocate_delete_all_sends_collection_delete_with_optional_tokens
+    transport = FakeTransport.new([response(204)])
+    client = GeniusReferrals::Client.new(
+      auth_token: 'token',
+      transport: transport,
+      base_url: 'https://api.example.test'
+    )
+
+    result = client.advocates.delete_all('acct', advocates: %w[a1 a2])
+
+    request = transport.requests.first
+    assert_nil(result.data)
+    assert_equal('DELETE', request[:method])
+    assert_equal('https://api.example.test/accounts/acct/advocates?advocates=a1%2Ca2', request[:url])
+    assert_equal('token', request[:headers]['X-Auth-Token'])
+    assert_nil(request[:body])
+  end
+
   def test_bonus_patch_is_unwrapped
     transport = FakeTransport.new([response(204)])
     client = GeniusReferrals::Client.new(auth_token: 'token', transport: transport)
